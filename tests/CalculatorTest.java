@@ -1,20 +1,32 @@
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
+    private Calculator cal;
 
-    @org.junit.Test
+    @Before
+    public void setup() {
+        cal = new Calculator();
+        System.out.println("before");
+    }
+
+    @Test
     public void add() {
+        assertEquals(9, cal.add(6,3));
+        System.out.println("add");
     }
 
-    @org.junit.Test
+    @Test
     public void subtract() {
+        assertEquals(3, cal.subtract(6,3));
+        System.out.println("subtract");
     }
 
-    @org.junit.Test
-    public void multiply() {
-    }
-
-    @org.junit.Test
-    public void divide() {
+    @After
+    public void teardown() {
+        System.out.println("teardown");
     }
 }
